@@ -13,11 +13,9 @@ public class CatConroller : MonoBehaviour
     public float hoverHeight;  // Hover height (how much it moves up and down)
     public float hoverSpeed;     // Speed of the hover effect
     
-    private Vector3 initialPosition;
-
     void Start()
     {
-        initialPosition = transform.position;
+        
     }
 
     void Update()
