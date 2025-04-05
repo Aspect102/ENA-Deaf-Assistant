@@ -1,20 +1,43 @@
+using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
 using UnityEngine;
 
 public class CatConroller : MonoBehaviour
 {
     public Transform cameraTransform;
-    public float distanceFromCamera = 1f;
+    private HandGrabInteractor handGrab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float distance;
+    public float offsetRight; 
+    public float offsetUp; 
+    public float hoverHeight;  // Hover height (how much it moves up and down)
+    public float hoverSpeed;     // Speed of the hover effect
+    
+    private Vector3 initialPosition;
+
     void Start()
     {
-        
+        initialPosition = transform.position;
     }
 
     void Update()
     {
-        Vector3 resultingPosition = cameraTransform.position + new Vector3(0.5f, 0f, 0.5f);// cameraTransform.forward * distanceFromCamera;
-        transform.position = resultingPosition;        
+        Vector3 newPosition = cameraTransform.position + cameraTransform.forward * distance;
+        
+        Vector3 offsetR = cameraTransform.right * offsetRight;
+        Vector3 offsetU = cameraTransform.up * offsetUp; 
+        newPosition += offsetR + offsetU;
+
+        // floating effect (hover)
+        newPosition.y += Mathf.Sin(Time.time * hoverSpeed) * hoverHeight;
+
+        transform.position = newPosition;
+        transform.LookAt(cameraTransform);  
+
+        
+        // if (InteractorState.Select == handGrab.State) {
+            
+        // }
     }
 }
 
