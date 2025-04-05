@@ -1,0 +1,2 @@
+C:\Users\RBalatay\Documents\Other\Bath Hack 2025\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\RBalatay\Documents\Other\Bath Hack 2025\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

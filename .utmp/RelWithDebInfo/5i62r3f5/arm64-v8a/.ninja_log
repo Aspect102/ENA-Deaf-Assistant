@@ -1,0 +1,10 @@
+# ninja log v5
+44	2604	7655598988638258	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9ff1cf190d0e59b6
+35	2617	7655598988748891	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	447fb8d81a6fb92b
+16	2650	7655598989430013	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	9905ee8da3e4c027
+62	2678	7655598989705822	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	df7e9a5ddc4bac48
+1	2776	7655598990650772	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	bd1a12989b8c94d6
+54	3034	7655598993305231	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	b52a91f5f8a30811
+24	3075	7655598993724084	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	a7412e97dedf2aa7
+9	3233	7655598995225275	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	abc4f52472080e0
+3233	3504	7655598997952476	C:/Users/RBalatay/Documents/Other/Bath Hack 2025/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5i62r3f5/obj/arm64-v8a/libgame.so	42173300c4a5fa47
