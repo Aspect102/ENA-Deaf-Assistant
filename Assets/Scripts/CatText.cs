@@ -7,12 +7,17 @@ public class CatText : MonoBehaviour
     Transform unit;
     Transform worldSpaceCanvas;
 
+    RectTransform rect;
+
+    public Transform catTransform;
+
     public Vector3 offset;
     void Start()
     {
         mainCam = Camera.main.transform;
         unit = transform.parent;
         worldSpaceCanvas = GameObject.FindObjectOfType<Canvas>().transform;
+        rect = gameObject.GetComponent<RectTransform>();
 
         transform.SetParent(worldSpaceCanvas);
     }
@@ -22,5 +27,7 @@ public class CatText : MonoBehaviour
     {
         transform.rotation = Quaternion.LookRotation(transform.position - mainCam.transform.position);
         transform.position = unit.position + offset;
+
+        rect.position = catTransform.position;
     }
 }
