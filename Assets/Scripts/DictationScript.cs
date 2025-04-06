@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Oculus.Voice.Dictation;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class DictationScript : MonoBehaviour
     public GameObject TextObject;
     public string spokenText;
     public bool finishedSpeaking = true;
+    public TextMeshProUGUI TextboxStatus;
 
     void Awake()
     {
@@ -38,7 +40,23 @@ public class DictationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        appDictationExperience.Activate();
+
     }
 
+    public void StartListening()
+    {
+        TextboxStatus.text = "Now: Listening";
+        StartCoroutine(Dictate());
+    }
+
+    public void StopListening()
+    {
+        StopCoroutine(Dictate());
+    }
+
+    IEnumerator Dictate()
+    {
+        appDictationExperience.Activate();
+        yield return null;
+    }
 }

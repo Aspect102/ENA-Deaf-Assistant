@@ -15,3 +15,4 @@ C:\Users\zacgr\ENA Deaf Assistant\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLib
 C:\Users\zacgr\ENA Deaf Assistant\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAConfigurationCallbacks.h
 C:\Users\zacgr\ENA Deaf Assistant\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAKeyEventCallbacks.h
 C:\Users\zacgr\ENA Deaf Assistant\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAMotionEventCallbacks.h
+C:\Users\zacgr\ENA Deaf Assistant\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\FramePacing\UnitySwappyWrapper.h

@@ -21,20 +21,20 @@ MonoBehaviour:
   _indexFeatureConfigs:
     _value:
     - _mode: 0
-      _feature: 0
-      _state: 1
+      _feature: 3
+      _state: 10
   _middleFeatureConfigs:
     _value:
     - _mode: 0
       _feature: 0
-      _state: 2
+      _state: 1
   _ringFeatureConfigs:
     _value:
     - _mode: 0
       _feature: 0
-      _state: 2
+      _state: 1
   _pinkyFeatureConfigs:
     _value:
     - _mode: 0
       _feature: 0
-      _state: 2
+      _state: 1

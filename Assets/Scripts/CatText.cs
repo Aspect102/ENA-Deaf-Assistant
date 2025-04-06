@@ -20,6 +20,8 @@ public class CatText : MonoBehaviour
         rect = gameObject.GetComponent<RectTransform>();
 
         transform.SetParent(worldSpaceCanvas);
+        
+        // rect.position = catTransform.position;
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class CatText : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(transform.position - mainCam.transform.position);
         transform.position = unit.position + offset;
 
-        rect.position = catTransform.position;
+        transform.position = catTransform.position;     
+        // rect.position = catTransform.position;
     }
 }
