@@ -1,5 +1,6 @@
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
+using System.Collections;
 using UnityEngine;
 
 public class CatConroller : MonoBehaviour
@@ -20,10 +21,14 @@ public class CatConroller : MonoBehaviour
     public GameObject dictObject;
     DictationScript dictationScript;
 
+    // public bool finishedSpeaking;
     public GameObject happy;
     public GameObject closedEyes;
-    
-    
+    public GameObject openMouth;
+    public string lastSpoken = "";
+    public bool isTalking = false;
+
+
     void Start()
     {
         dictationScript = dictObject.GetComponent<DictationScript>();
@@ -54,27 +59,43 @@ public class CatConroller : MonoBehaviour
             happy.SetActive(true);
         }
 
-        Debug.Log(dictationScript.spokenText);
+        if (!dictationScript.finishedSpeaking && dictationScript.spokenText != lastSpoken && !isTalking)
+        {
+            StartCoroutine(talkingMode());
+        }
+
+        lastSpoken = dictationScript.spokenText;
+    }
+
+    IEnumerator talkingMode()
+    {
+        isTalking = true;
+
+        while (true)
+        {
+            openMouth.SetActive(!openMouth.activeSelf);
+            yield return new WaitForSeconds(0.15f);
+            
+            if (dictationScript.finishedSpeaking)
+            {
+                isTalking = false;
+                openMouth.SetActive(false);
+                yield break;
+            }
+        }
     }
 
 
     void TryGrab(OVRHand lHand, OVRHand rHand)
     {
-        Debug.Log("ajsdnakdj");
         if ((lHand.GetFingerIsPinching(OVRHand.HandFinger.Index) || rHand.GetFingerIsPinching(OVRHand.HandFinger.Index)) && grabbedObject == false)
         {
-            RaycastHit hit1;
             Vector3 lHandPosition = lHand.transform.position;
-
-            RaycastHit hit2 = new RaycastHit();
             Vector3 rHandPosition = rHand.transform.position;
-
-            if (Physics.Raycast(lHandPosition, lHand.transform.forward, out hit1, grabDistance) || Physics.Raycast(rHandPosition, rHand.transform.forward, out hit2, grabDistance))
+            
+            if (Vector3.Distance(lHandPosition, transform.position) < 1 || Vector3.Distance(rHandPosition, transform.position) < 1)
             {
-                if (hit1.collider.CompareTag("Grabbable") || hit2.collider.CompareTag("Grabbable"))
-                {
-                    grabbedObject = true;
-                }
+                grabbedObject = true;
             }
         }
         else if (!(lHand.GetFingerIsPinching(OVRHand.HandFinger.Index) || rHand.GetFingerIsPinching(OVRHand.HandFinger.Index) && grabbedObject == true))

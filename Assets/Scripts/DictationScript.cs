@@ -7,7 +7,8 @@ public class DictationScript : MonoBehaviour
 {
     AppDictationExperience appDictationExperience;
     public GameObject TextObject;
-    public String spokenText;
+    public string spokenText;
+    public bool finishedSpeaking = true;
 
     void Awake()
     {
@@ -16,14 +17,16 @@ public class DictationScript : MonoBehaviour
         appDictationExperience.DictationEvents.OnPartialTranscription.AddListener((transcription) =>
         {
             textbox.text = transcription;
+            spokenText = transcription;
+            finishedSpeaking = false;
         });
 
         appDictationExperience.DictationEvents.OnFullTranscription.AddListener((transcription) =>
         {
             textbox.text = transcription;
+            spokenText = transcription;
+            finishedSpeaking = true;
         });
-
-        spokenText = textbox.text;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
