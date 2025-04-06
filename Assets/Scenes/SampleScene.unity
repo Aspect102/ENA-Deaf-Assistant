@@ -20194,6 +20194,7 @@ MonoBehaviour:
   happy: {fileID: 611713227}
   closedEyes: {fileID: 183987295}
   openMouth: {fileID: 18797331}
+  lastSpoken: 
   isTalking: 0
 --- !u!135 &1523895455
 SphereCollider:
