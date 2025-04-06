@@ -17,6 +17,7 @@ public class SigningController : MonoBehaviour
     public void StartSigning()
     {
         Poses.SetActive(true);
+
     }
 
     public void AppendSign(string sign)
